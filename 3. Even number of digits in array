@@ -1,0 +1,18 @@
+package evennumberofdigits;
+public class EvenNumberOfDigits {
+    public static void main(String[] args) {
+        int arr[]={555,901,4825,1771};
+        int count=0,even=0;
+        for(int n:arr){
+            while(n>0){
+                n=n/10;
+                count++;
+            }
+            if(count%2==0){
+                even++;
+            }
+            count=0;
+        }
+        System.out.println(even);
+    }  
+}
