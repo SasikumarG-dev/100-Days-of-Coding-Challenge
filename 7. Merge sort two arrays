@@ -1,0 +1,17 @@
+package mergesortedarray;
+import java.util.Arrays;
+public class MergeSortedArray {
+    public static void main(String[] args) {
+        int arr[]={1,2,3,0,0,0};
+        int arr1[]={2,5,3};
+        int m=3,n=3;
+        for(int i=m,j=0;i<(m+n);i++){
+            arr[i]=arr1[j];
+            j++;
+        }
+        Arrays.sort(arr);
+        for(int a:arr)
+            System.out.println(a);
+    }
+    
+}
