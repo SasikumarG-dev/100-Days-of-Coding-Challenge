@@ -1,0 +1,15 @@
+package replacewithnextgreatestnumber;
+public class ReplaceWithNextGreatestNumber {
+    public static void main(String[] args) {
+        int arr[]={17,18,5,4,6,1};
+        int m=arr[arr.length-1];
+        arr[arr.length-1]=-1;
+        for(int i=arr.length-2;i>=0;i--){
+            int max=Math.max(m, arr[i]);
+            arr[i]=m;
+            m=max;
+            }
+        for(int i=0;i<arr.length;i++)
+            System.out.println(arr[i]);
+    } 
+}
