@@ -1,0 +1,46 @@
+package customer.details;
+import java.util.*;
+public class CustomerDetails {
+        static String name;
+        static int age;
+        static String gender;
+        static String city;
+    
+    static void display(){
+        System.out.println("Welcome "+name);
+        System.out.println("Age is: "+age);
+        System.out.println("Gender is: "+gender);
+        System.out.println("City: "+city);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your name");
+        name =sc.nextLine();
+        System.out.println("Enter your age");
+        age=sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter your gender");
+        gender = sc.nextLine();
+        System.out.println("Enter your city");
+        city=sc.nextLine();
+        System.out.println("\nCustomer details....");
+        CustomerDetails.display();
+    }
+}
+
+OUTPUT:
+Enter your name
+Sasikumar
+Enter your age
+20
+Enter your gender
+Male
+Enter your city
+Pondicherry
+
+Customer details....
+
+Welcome Sasikumar
+Age is: 20
+Gender is: Male
+City: Pondicherry
