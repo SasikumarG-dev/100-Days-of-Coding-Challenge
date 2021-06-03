@@ -1,0 +1,23 @@
+package diffbetweensmallandlargenumber;
+import java.util.Arrays;
+public class DiffBetweenSmallAndLargeNumber {
+    public static void main(String[] args) {
+        int arr[]= {5, 7, 2, 4, 9};
+        Arrays.sort(arr);
+        int diff=arr[arr.length-1]-arr[0];
+        float avg,sum=0;
+        int j=0;
+        for(int i=1;i<arr.length-1;i++){
+            
+            sum=sum+arr[i];
+            j++;
+        }
+        avg=sum/j;
+        System.out.println("Difference of smallest and largest number is "+diff);
+        System.out.printf("Average of the numbers is %.2f",avg);
+    }
+}
+
+  OUTPUT:
+Difference of smallest and largest number is 7
+Average of the numbers is 5.33
