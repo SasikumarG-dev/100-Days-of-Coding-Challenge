@@ -1,0 +1,16 @@
+package duplicatestringinarray;
+import java.util.Arrays;
+public class Duplicatestringinarray {
+    public static void main(String[] args) {
+        String arr[]={"bcd", "abd", "jude", "bcd", "oiu", "gzw", "oiu"};
+        Arrays.sort(arr);
+        for(int i=0;i<arr.length-1;i++){
+            if(arr[i]==arr[i+1])
+                System.out.println(arr[i]);
+        }
+    } 
+}
+
+OUTPUT:
+bcd
+oiu
