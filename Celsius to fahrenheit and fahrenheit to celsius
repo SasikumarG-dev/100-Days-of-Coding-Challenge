@@ -1,0 +1,38 @@
+package celsiusconversion;
+import java.util.*;
+public class Celsiusconversion {
+    static float celsi;static float faren;static String n;
+    public static float f;static float c;
+    static void celsius(){
+        celsi=((f-32)*5)/9;
+        System.out.println(celsi);
+    }
+    static void farenheit(){
+        faren=((c*9)/5)+32;
+        System.out.println(faren);
+    }
+    public static void main(String[] args) {
+        String n;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("celsius to farenhiet press: f  (or) farenheit to celsius press:c ....");
+        n = sc.nextLine();
+        if(n.equalsIgnoreCase("c")){
+            System.out.println("Enter farenheit value ");
+            f = sc.nextFloat();
+            celsius();
+        }
+        else if (n.equalsIgnoreCase("f")){
+            System.out.println("Enter celsius value ");
+            c = sc.nextFloat();
+            farenheit();
+        }
+        else
+            System.out.println("Enter correct letter");
+    }
+}
+
+  OUTPUT:
+  celsius to farenhiet press: f  (or) farenheit to celsius press:c ....
+f
+Enter celsius value 
+211
