@@ -1,0 +1,18 @@
+package commonelement;
+public class Commonelement {
+    public static void main(String[] args) {
+        String arr[]={"Python", "JAVA", "PHP", "C#", "C++", "SQL"};
+        String arr1[]={"MySQL", "SQL", "SQLite", "Oracle", "PostgreSQL", "DB2", "JAVA"};
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr1.length;j++){
+                if(arr[i].equals(arr1[j]))
+                    System.out.println(arr[i]);
+            }
+        }
+    }
+    
+}
+
+OUTPUT:
+JAVA
+SQL
