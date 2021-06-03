@@ -1,0 +1,17 @@
+package checkarrayshas0and.pkg1;
+public class CheckArraysHas0And1 {
+    public static void main(String[] args) {
+        int arr[]={5, 7, 2, 4, 9};
+        System.out.println(check(arr));
+    }
+    public static boolean check (int[] num){
+            for(int n: num){
+            if(n==0 || n==-1)
+                return False;
+            }
+                return True;
+        }
+}
+
+OUTPUT:
+True
