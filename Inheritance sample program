@@ -1,0 +1,32 @@
+package inh;
+class animal{
+    void eat(){
+        System.out.println("eating");
+    }
+}
+class dog extends animal{
+    void bark(){
+        System.out.println("barking");
+    }
+}
+class cat extends animal{
+    void meow(){
+        System.out.println("meowing");
+    }
+}
+public class InheritanceExample {
+   public static void main(String[] args) {
+       cat a = new cat();
+       dog b = new dog();
+       a.meow();
+       a.eat();
+       b.bark();
+       a.eat();
+    } 
+}
+
+OUTPUT:
+meowing
+eating
+barking
+eating
