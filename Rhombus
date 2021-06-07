@@ -1,0 +1,37 @@
+package rhombus;
+import java.util.*;
+public class Rhombus {
+    public static void main(String[] args) {
+        int i,j,temp,tempo;
+        Scanner sc=new Scanner (System.in);
+        System.out.println("Enter number");
+        int n=sc.nextInt();
+        for(i=1;i<=n;i++){
+            for(j=i;j<n;j++){
+                System.out.print(" ");
+            }
+            temp=i;
+            for(int k=i;k<=i;k++){
+                System.out.print(temp);
+                while (temp>1){
+                    System.out.print(--temp);
+                } 
+                for(j=i-1;j>=temp;j--){
+                    System.out.print(++temp);
+                    j++;
+                }               
+                }
+            System.out.println();
+            }
+    }  
+}
+
+
+OUTPUT:
+Enter number
+5
+    1
+   212
+  32123
+ 4321234
+543212345
