@@ -1,0 +1,25 @@
+package removeelementandreturnarray;
+public class RemoveElementAndReturnArray {
+    public static void main(String[] args) {
+        int arr[]={0,1,2,2,3,0,4,2};
+        int val=2,j=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]!=val){
+                arr[j++]=arr[i];
+            }
+        }
+        System.out.println("The size of the array after removing the element: "+j);
+        System.out.println("Array elements...");
+        for(int i=0;i<j;i++)
+            System.out.println(arr[i]);
+    }  
+}
+
+OUTPUT:
+The size of the array after removing the element: 5
+Array elements...
+0
+1
+3
+0
+4
