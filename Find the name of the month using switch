@@ -1,0 +1,43 @@
+package month;
+import java.util.*;   
+public class Month {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the month: ");
+        int month=sc.nextInt();
+        String mon;
+        switch(month){
+            case 1:mon="January";
+            break;
+            case 2:mon="February";
+            break;
+            case 3:mon="March";
+            break;
+            case 4:mon="April";
+            break;
+            case 5:mon="May";
+            break;
+            case 6:mon="June";
+            break;
+            case 7:mon="July";
+            break;
+            case 8:mon="August";
+            break;
+            case 9:mon="September";
+            break;
+            case 10:mon="October";
+            break;
+            case 11:mon="NOvember";
+            break;
+            case 12:mon="December";
+            break;
+            default:mon="invalid";
+        }
+        System.out.println(mon);
+    }
+}
+
+OUTPUT:
+Enter the month:
+10
+October
