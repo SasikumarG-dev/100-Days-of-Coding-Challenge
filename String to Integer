@@ -1,0 +1,16 @@
+package stringtointeger;
+public class StringToInteger {
+    public static void main(String[] args) {
+        String str1="1234";
+        String str2="5678";
+        int int1=Integer.parseInt(str1);
+        int int2=Integer.parseInt(str2);
+        System.out.println(int1);
+        System.out.println(int2);
+    }
+    
+}
+
+OUTPUT:
+1234
+5678
