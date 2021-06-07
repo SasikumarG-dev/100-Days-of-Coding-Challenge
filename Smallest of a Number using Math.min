@@ -1,0 +1,26 @@
+package small;
+import java.util.Scanner;
+public class Small {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter 1st number");
+        int  a=sc.nextInt();
+        System.out.println("Enter 2nd number");
+        int b=sc.nextInt();
+        System.out.println("Enter 3rd number");
+        int c=sc.nextInt();
+        System.out.println(smallest(a,b,c));
+    }
+    public static double smallest(int a,int b,int c){
+        return Math.min(Math.min(a,b),c);
+    }
+}
+
+OUTPUT:
+Enter 1st number
+5
+Enter 2nd number
+2
+Enter 3rd number
+6
+2.0
