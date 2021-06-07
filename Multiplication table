@@ -1,0 +1,29 @@
+package multiplication;
+import java.util.Scanner;
+public class Multiplication {
+    public static void main(String[] args) {
+        int i,mul;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number");
+        int n=sc.nextInt();
+        for(i=0;i<=n;i++){
+            mul=i*n;
+            System.out.println(n+ " x "  +i+ " = "+mul);
+        }
+    }    
+}
+
+OUTPUT:
+Enter a number
+10
+10 x 0 = 0
+10 x 1 = 10
+10 x 2 = 20
+10 x 3 = 30
+10 x 4 = 40
+10 x 5 = 50
+10 x 6 = 60
+10 x 7 = 70
+10 x 8 = 80
+10 x 9 = 90
+10 x 10 = 100
