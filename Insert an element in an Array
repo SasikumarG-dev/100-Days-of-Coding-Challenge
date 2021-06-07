@@ -1,0 +1,33 @@
+package removeindex;
+import java.util.*;
+public class Removeindex {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int arr[]={1,2,3,4,5};
+        System.out.println("Enter position to be inserted: ");
+        int pos=sc.nextInt();
+        System.out.println("Enter number to be inserted: ");
+        int ins=sc.nextInt();
+        System.out.println("Elements after inserted...");
+        for(int i=0;i<arr.length;i++){
+            if(i==pos){
+                System.out.println(ins);
+            }
+            System.out.println(arr[i]);
+        } 
+    }
+    
+}
+
+OUTPUT:
+Enter position to be inserted: 
+3
+Enter number to be inserted: 
+3
+Elements after inserted...
+1
+2
+3
+3
+4
+5
