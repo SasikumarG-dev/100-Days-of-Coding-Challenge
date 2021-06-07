@@ -1,0 +1,24 @@
+package methodoverloading;
+public class MethodOverloading {
+    public void square(){
+        System.out.println("No parameter passed.."); 
+}
+    public void square(int a){
+        System.out.println(a*a);
+    }
+    public void square(double a){
+        System.out.println(a*a);
+    }
+    public static void main(String[] args) {
+        MethodOverloading obj=new MethodOverloading();
+        obj.square();
+        obj.square(4);
+        obj.square(1.2);
+    }
+    
+}
+
+OUTPUT:
+No parameter passed..
+16
+1.44
