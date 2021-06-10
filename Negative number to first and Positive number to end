@@ -1,0 +1,30 @@
+package negtofirstpostoend;
+import java.util.Arrays;
+public class NegToFirstPosToEnd {
+    public static void main(String[] args) {
+        int arr[]={-12, 11, -13, -5, 6, -7, 5, -3, -6};
+        int l=arr.length,temp=0;
+        for(int i=0;i<l;i++){
+            for(int j=i;j<l;j++){
+                if(arr[j]<0){
+                    temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+        }
+    }
+        for(int n:arr)
+            System.out.println(n);
+    }
+}
+
+OUTPUT:
+-6
+-3
+-7
+-5
+-13
+-12
+5
+6
+11
