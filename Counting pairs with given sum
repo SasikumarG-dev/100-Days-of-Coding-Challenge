@@ -1,0 +1,23 @@
+//Program to count the number of pairs whose sum is equal to the given sum.
+
+package countpairswithgivesum;
+public class CountPairsWithGiveSum {
+    static int countthesum(int arr[],int sum){
+        int count=0;
+        for(int i=0;i<arr.length;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]+arr[j]==sum)
+                    count++;
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        int arr[]={10, 12, 10, 15, -1, 7, 6,5, 4, 2, 1, 1, 1};
+        int sum=11;
+        System.out.println("Number of pairs whose sum is equal to "+sum+" is "+countthesum(arr,sum));
+    }
+}
+
+OUTPUT:
+Number of pairs whose sum is equal to 11 is 9
