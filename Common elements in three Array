@@ -1,0 +1,37 @@
+// Program to find the common elements in the three unsorted Array
+
+package commonelementsinthreesortedarray;
+public class CommonElementsInThreeSortedArray {
+    public static void main(String[] args) {
+        int arr[]={1, 5, 9};
+        int arr1[]={3, 4, 5, 5, 10};
+        int arr2[]={5, 5, 10, 20};
+        int count=0;
+        int res[]=new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr1.length;j++){
+                if(arr[i]==arr1[j]){
+                    for(int k=0;k<arr2.length;k++){
+                        if(arr[i]==arr2[k]){
+                            res[count++]=arr[i];
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+        if(count>0){
+            System.out.println("Common elements are..");
+            for(int i=0;i<count;i++)
+                System.out.println(res[i]);
+        }
+        else{
+            System.out.println("<<No common elements found>>");
+        }
+    }
+}
+
+OUTPUT:
+Common elements are..
+5
