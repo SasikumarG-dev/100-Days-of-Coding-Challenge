@@ -1,0 +1,29 @@
+package keyispresentinsizek;
+public class KeyIsPresentInSizeK {
+    public static boolean checkindex(int arr[],int x,int k,int l){
+        int j=0;
+        for(int i=0;i<l;i=i+k){
+            for(j=i;j<i+k;j++){
+                if(j<l&&arr[j]==x)
+                    break;
+                if(j==i+k||j>l)
+                    return false;
+            }
+        }
+        if(j<l)
+            return true;
+        return false;
+    }
+    public static void main(String[] args) {
+        int arr[]={ 3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12,3,9};
+        int x=3,k=3;
+        int l=arr.length;
+        if(checkindex(arr,x,k,l))
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+    }
+}
+
+OUTPUT:
+No
