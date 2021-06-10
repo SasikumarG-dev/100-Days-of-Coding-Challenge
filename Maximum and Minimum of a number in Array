@@ -1,0 +1,28 @@
+package maxandmin;
+public class MaxAndMin {
+    static int min(int arr[],int l){
+        int store=arr[0];
+        for(int i=1;i<l;i++){
+            store=Math.min(store, arr[i]);
+        }
+        return store;
+    }
+    static int max(int arr[],int l){
+        int store=arr[0];
+        for(int i=1;i<l;i++){
+            store=Math.max(store, arr[i]);
+        }
+        return store;
+    }
+    public static void main(String[] args) {
+        int arr[]={12, 1234, 45, 67, -1};
+        int l=arr.length;
+        System.out.println("Minimum number in the array is "+min(arr,l));;
+        System.out.println("Maximum number in the array is "+max(arr,l));;
+    }
+    
+}
+
+OUTPUT:
+Minimum number in the array is -1
+Maximum number in the array is 1234
