@@ -1,0 +1,44 @@
+// Java program to print String and Integer in an Array.
+
+package stringtoarray;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.io.*;
+public class StringToArray {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the size of the String Array >>>>>>");
+        
+        int n=sc.nextInt();
+        System.out.println("");
+        String str[]=new String[n];
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            str[i]=sc.next();
+        }
+        System.out.println('\n'+ "The Array with String and Integer are.....");
+        for( int i=0;i<n;i++){
+        try{
+            arr[i]=Integer.valueOf(str[i]);
+            System.out.println(arr[i]);
+        }catch(Exception e){
+            System.out.println(str[i]);
+        }
+        }
+    }
+}
+
+OUTPUT:
+Enter the size of the String Array >>>>>>
+4
+
+Sasi
+kumar
+19
+10
+
+The Array with String and Integer are.....
+Sasi
+kumar
+19
+10
