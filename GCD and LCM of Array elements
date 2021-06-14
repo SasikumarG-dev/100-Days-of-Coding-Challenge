@@ -1,0 +1,43 @@
+// Java program to print GCD and LCM of Array elements.
+ package lcmandhcf;
+public class LCMandHCF {
+    static int gcd(int a,int b){
+        while(a!=b){
+            if(a>b) a=a-b;
+            else b=b-a;
+        }return a;
+    }
+    static int leastcommonmultiple(int arr[]){
+        int lcm=1;int divisor=2;
+        while(true){
+            int count=0;
+            boolean div=false;
+            for(int i=0;i<arr.length;i++){
+                if(arr[i]==1)
+                    count++;
+                if(arr[i]%divisor==0){
+                    div=true;
+                    arr[i]=arr[i]/divisor;
+                }  
+            }
+            if(div) lcm=lcm*divisor;
+            else divisor++;
+        
+        if(count==arr.length) return lcm;
+        }
+    }
+    public static void main(String[] args) {
+        int arr[]={2, 7, 3, 9, 4};
+        int result=arr[0];
+        for(int i=1;i<arr.length;i++){
+            result=gcd(result,arr[i]);
+        }
+        int lcm1=leastcommonmultiple(arr);
+        System.out.println("The GCD of given Array elements is... "+result);
+        System.out.println("The LCM of given Array elements is... " +lcm1);
+    }
+}
+
+OUTPUT:
+The GCD of given Array elements is... 1
+The LCM of given Array elements is... 252
