@@ -1,0 +1,20 @@
+package firstrepeatingelement;
+public class FirstRepeatingElement {
+    public static void main(String[] args) {
+        int arr[]={10, 5, 3, 4, 3, 5, 6};
+        System.out.println("The first repeating element in the Arrays is....");
+        for(int i=0;i<arr.length;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    System.out.println(arr[i]);
+                    System.exit(0);
+                }
+            }
+        }
+    }
+    
+}
+
+OUTPUT:
+The first repeating element in the Arrays is....
+5
