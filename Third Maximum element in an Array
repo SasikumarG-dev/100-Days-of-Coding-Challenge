@@ -1,0 +1,43 @@
+// Java program to find the third Maximum element in an Array
+
+package thirdmaximumnumber;
+import java.util.Arrays;
+public class ThirdMaximumNumber {
+    public static void main(String[] args) {
+        int arr[]={1,2,5,4,45,9,3,35,};
+        int first=Integer.MIN_VALUE,second=Integer.MIN_VALUE,third=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++)
+            if(arr[i]>first)
+                first=arr[i];
+        if(arr.length<3){
+            for(int i=0;i<arr.length-1;i++){
+                if(arr[i]<arr[i+1]){
+                    arr[i]=arr[i+1];
+                }
+            }
+            System.out.println(arr[0]);
+        }
+
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>first){
+                third=second;
+                second=first;
+                first=arr[i];
+            }
+        }
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>second&&arr[i]<first){
+                third=second;
+                second=arr[i];
+            }
+        }
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>third&&arr[i]<second)
+                third=arr[i];
+        }
+        System.out.println("Third Maximum element in an Array is "+third);
+    }
+}
+
+OUTPUT:
+Third Maximum element in an Array is 9
