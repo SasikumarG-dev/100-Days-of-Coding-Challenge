@@ -1,0 +1,26 @@
+//Java program to find first Non-repeating element in an Array.
+
+package firstnonrepeatingelement;
+public class FirstNonRepeatingElement {
+    public static void main(String[] args) {
+        int arr[]={9, 4, 9, 6, 7, 4 },j=0;
+        System.out.println("First Non-repeating element in an Array...");
+        for(int i=0;i<arr.length;i++){
+            for(j=0;j<arr.length;j++){
+                if(i!=j&&arr[i]==arr[j]){
+                    break;
+                }
+            }
+            if(j==arr.length){
+                System.out.println(arr[i]);
+                System.exit(0);
+            }
+        }
+    }
+    
+}
+
+
+OUTPUT:
+First Non-repeating element in an Array...
+6
