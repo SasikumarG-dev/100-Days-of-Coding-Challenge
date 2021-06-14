@@ -1,0 +1,18 @@
+// Java program to print the number of special characters in a String.
+ package countthespecailcharecter;
+public class CountTheSpecialCharecter {
+    public static void main(String[] args) {
+        String str="A!!Sasi@kumarG(";int count=0;
+        for(int i=0;i<str.length();i++){
+            if(!Character.isDigit(str.charAt(i))
+                && !Character.isLetter(str.charAt(i))
+                && !Character.isWhitespace(str.charAt(i))){
+                count++;
+            }
+    }
+        System.out.println("The number of special charecters in a String is "+count);
+    }
+}
+
+OUTPUT:
+The number of special charecters in a String is 4
