@@ -1,0 +1,47 @@
+// Java program to find all the palindrome substring in the given string.
+
+package palindromesubstringofastring;
+public class PalindromeSubstringOfaString {
+    static boolean check(String sub){
+        int n=sub.length();
+        for(int i=0;i<n/2;i++){
+            if(sub.charAt(i)!=sub.charAt(n-i-1))
+                return false;
+        }
+        System.out.println(sub);
+        return true;
+    }
+    public static void main(String[] args) {
+        String str="MALAYALAM";int count=0;
+        System.out.println("The palindrome Strings are..");
+        for(int i=0;i<str.length();i++){
+            for(int j=i;j<str.length();j++){
+                String substring=str.substring(i, j+1);
+                if(check(substring))
+                    count++;
+            }
+        }
+        System.out.println("\nThe number of palindrome Strings is "+count);
+    }
+    
+}
+
+OUTPUT:
+The palindrome Strings are..
+M
+MALAYALAM
+A
+ALA
+ALAYALA
+L
+LAYAL
+A
+AYA
+Y
+A
+ALA
+L
+A
+M
+
+The number of palindrome Strings is 15
