@@ -1,0 +1,23 @@
+// Java program to remove the given word from the String and return the remaining words in the String
+
+package removegivenwordfromstring;
+public class RemoveGivenWordFromString {
+    static void remove(String str,String rem){
+        String arr[]=str.split(" ");
+        String res="";
+        for(String num:arr){
+            if(!num.equals(rem))
+                res+=num+" ";
+        }
+        System.out.println(res);
+    }
+    public static void main(String[] args) {
+        String str="Welcome to my GitHub profile";
+        String rem="my";
+        remove(str,rem);
+    }
+    
+}
+
+OUTPUT:
+Welcome to GitHub profile 
