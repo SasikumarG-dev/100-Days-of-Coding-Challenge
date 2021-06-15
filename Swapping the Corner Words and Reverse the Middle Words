@@ -1,0 +1,36 @@
+// Java program to Swap the corner words and reverse the middle words in the String
+
+package swapcornerwordsandreversemiddlewords;
+
+import java.util.Arrays;
+
+public class SwapCornerWordsAndReverseMiddleWords {
+    static String rev(String res[]){
+        String mid="";
+        for(int i=res.length-2;i>0;i--){
+            String temp=res[i];
+            for(int j=temp.length()-1;j>=0;j--){
+                mid+=temp.charAt(j);
+            }
+            mid+=" ";
+        }
+        return mid;
+    }
+    static void swap(String str){
+        String temp;int n=str.length();
+        String res[]=str.split(" ");
+        temp=res[0];
+        res[0]=res[res.length-1];
+        res[res.length-1]=temp;
+        String mid=rev(res);
+        System.out.println(res[0]+" "+mid+res[res.length-1]);
+    }
+    public static void main(String[] args) {
+        String str="Hello this is my GitHub profile";
+        swap(str);
+    }
+    
+}
+
+OUTPUT:
+profile buHtiG ym si siht Hello
