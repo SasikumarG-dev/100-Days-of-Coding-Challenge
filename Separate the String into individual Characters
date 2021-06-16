@@ -1,0 +1,16 @@
+// Java program to separate each words in the String into a Character.
+
+package separateindividualcharacters;
+public class SeparateIndividualCharacters {
+    public static void main(String[] args) {
+        String str="Welcome to my GitHub profile";
+        str=str.replace(" ", "");
+        for(int i=0;i<str.length();i++){
+                System.out.print(str.charAt(i)+" ");
+        }
+        System.out.println();
+    }
+}
+
+OUTPUT:
+W e l c o m e t o m y G i t H u b p r o f i l e 
