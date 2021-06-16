@@ -1,0 +1,41 @@
+// Java program to convert Stiring to Byte Array.
+
+package converstringtobytearray;
+public class ConverStringToByteArray {
+    public static void main(String[] args) {
+        String str="Welcome to my GitHub profile";
+        byte arr[]=str.getBytes();
+        for(int i:arr)
+        System.out.println(i);
+    }
+}
+
+OUTPUT:
+87
+101
+108
+99
+111
+109
+101
+32
+116
+111
+32
+109
+121
+32
+71
+105
+116
+72
+117
+98
+32
+112
+114
+111
+102
+105
+108
+101
