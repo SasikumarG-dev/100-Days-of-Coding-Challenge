@@ -1,0 +1,59 @@
+// Java program to find the largest and the smallest palindrome word in the given String.
+
+package largestandsmallestpalindrome;
+import java.util.Arrays;
+public class LargestAndSmallestPalindrome {
+    static boolean checkpal(String word){
+        int n=word.length();
+        word=word.toLowerCase();
+        for(int i=0;i<n;i++,n--){
+        if(word.charAt(i)!=word.charAt(n-1))
+            return false;
+    }
+        return true;
+    }
+    static void printpal(int temp,String word[]){
+        int count=0;
+        String small="",large="";
+        for(int i=0;i<temp;i++){
+            if(checkpal(word[i])){
+                count++;
+            if(count ==1)
+                small=large=word[i];
+            else{
+                if(small.length()>word[i].length())
+                    small=word[i];
+                if(large.length()<word[i].length())
+                    large=word[i];
+            }
+            }
+        }
+        if(count ==0)
+            System.out.println("No palindrome found");
+        else{
+            System.out.println("The smallest palindrome is "+small);
+            System.out.println("The largest palindrome is "+large);
+        }
+    }
+    public static void main(String[] args) {
+        String str="Wow madam is driving is racecar";
+        String pal="";
+        int temp=0;
+        String word[]=new String[100];
+        str=str+" ";
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)!=' ')
+                pal=pal+str.charAt(i);
+            else{
+                word[temp++]=pal;
+                pal="";
+            }
+        }
+        printpal(temp,word);
+    }
+}
+
+
+OUTPUT:
+The smallest palindrome is Wow
+The largest palindrome is racecar
