@@ -1,0 +1,31 @@
+// Basic operations on LinkedList in Java
+
+package linkedlistbasicexercise;
+import java.util.*;
+public class LinkedListBasicExercise {
+    public static void main(String[] args) {
+        LinkedList<String> list=new LinkedList<String>();
+        list.add("One");
+        list.add("Two");
+        list.addFirst("Zero");
+        list.addLast("Three");
+        System.out.println("After adding: "+list+"\n");
+        list.add(1,"OneHundred");
+        System.out.println("After inserting first element: "+list+"\n");
+        list.set(1, "Hundered");
+        System.out.println("After changing first element: "+list+"\n");
+        list.remove(1);
+        list.remove("Zero");
+        System.out.println("After removing: "+list+"\n");
+    }
+}
+
+
+OUTPUT:
+After adding: [Zero, One, Two, Three]
+
+After inserting first element: [Zero, OneHundred, One, Two, Three]
+
+After changing first element: [Zero, Hundered, One, Two, Three]
+
+After removing: [One, Two, Three]
