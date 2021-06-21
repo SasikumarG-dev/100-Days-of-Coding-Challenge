@@ -1,0 +1,32 @@
+// Java program to find the index of the string using RegEx 
+
+package regexfinderexample;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+public class RegexFinderExample {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the RegeEx pattern");
+        Pattern pat=Pattern.compile(sc.nextLine(),Pattern.CASE_INSENSITIVE);
+        System.out.println("Enter the Text ");
+        Matcher match=pat.matcher(sc.nextLine());
+        boolean bool=false;
+        while(match.find()){
+            System.out.println(pat+" starting at index "
+                    +match.start()+" and ending at index "+match.end());
+            bool=true;
+        }
+        if(bool==false)
+            System.out.println("NO pattern found>>>>");
+    }
+}
+
+OUTPUT:
+Enter the RegeEx pattern
+Java
+Enter the Text 
+Do you know java if not learn java now to become a java developer
+Java starting at index 12 and ending at index 16
+Java starting at index 30 and ending at index 34
+Java starting at index 51 and ending at index 55
