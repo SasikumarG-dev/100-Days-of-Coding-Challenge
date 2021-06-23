@@ -1,0 +1,29 @@
+// Java program to print elements in X like structure.
+
+package printxstructure;
+public class PrintXstructure {
+    public static void main(String[] args) {
+        String str="SASIKUMAR";
+        for(int i=0;i<str.length();i++){
+            for(int j=0;j<str.length();j++){
+                if(i==j || i+j==str.length()-1){
+                    System.out.print(str.charAt(j)+" ");
+                }
+                else
+                    System.out.print("  ");
+            }
+            System.out.println("");
+        }
+    }
+}
+
+OUTPUT:
+S               R 
+  A           A   
+    S       M     
+      I   U       
+        K         
+      I   U       
+    S       M     
+  A           A   
+S               R 
