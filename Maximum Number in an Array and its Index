@@ -1,0 +1,22 @@
+// Java program to find the maximum number in an array and its index.
+
+package maximumnumberanditsindex;
+import java.util.Arrays;
+public class MaximumNumberAndItsIndex {
+    public static void main(String[] args) {
+        int arr[]={23, 45 ,82, 27, 66, 12, 78 ,13, 71};
+        int max=arr[0];int index=0;int i=0;
+        for( i=0;i<arr.length;i++){
+            if(arr[i]>max){
+                max=arr[i];
+                index=i;
+            }
+        }
+        System.out.println("Maximum Number in the Array is "+max);
+        System.out.println("The index of the Maximum Number is "+index);
+    }
+}
+
+OUTPUT:
+Maximum Number in the Array is 82
+The index of the Maximum Number is 2
