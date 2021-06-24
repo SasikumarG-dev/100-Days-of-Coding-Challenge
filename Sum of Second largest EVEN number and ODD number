@@ -1,0 +1,41 @@
+// Java program to find the sum of Second largest EVEN number and the Second largest ODD number.
+
+package sumofsecondlargestevenandodd;
+import java.util.Arrays;
+
+public class SumOfSecondLargestEvenAndOdd {
+    public static void main(String[] args) {
+        int arr[]={3, 2, 1, 7, 5, 4};
+        int evenarr[]=new int[arr.length];
+        int oddarr[]=new int[arr.length];
+        int even=0,odd=0;
+        int seceven=0;int secodd=0;
+        for(int i=0;i<arr.length;i++){
+            if(i%2==0){
+                evenarr[even++]=arr[i];
+            }
+            else
+                oddarr[odd++]=arr[i];
+        }
+        Arrays.sort(evenarr);Arrays.sort(oddarr);
+        for(int i=evenarr.length-1;i>=0;i--){
+            if(evenarr[i]!=0){
+                seceven=evenarr[i-1];
+                break;
+            }
+            
+        }
+        for(int i=oddarr.length-1;i>=0;i--){
+            if(oddarr[i]!=0){
+                secodd=oddarr[i-1];
+                break;
+            }
+        }
+        int sum=seceven+secodd;
+        System.out.println("The sum of the second largest even number and second largest odd number is "+sum);
+    }
+    
+}
+
+OUTPUT:
+The sum of the second largest even number and second largest odd number is 7
