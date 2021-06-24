@@ -1,0 +1,26 @@
+// Java program to count the number of carries between two numbers.
+
+package countthecarriesoftwonumbers;
+public class CountTheCarriesOfTwoNumbers {
+    public static void main(String[] args) {
+        int num1=9999,num2=111;int count=0;
+        int sum1=0,sum2=0,sum=0;
+        while(num1>0||num2>0){
+        sum1=num1%10;sum2=num2%10;
+        sum+=sum1+sum2;
+        if(sum>9){
+            sum=sum/10;
+            count++;
+        }
+        else
+            sum=0;
+        num1=num1/10;num2=num2/10;
+        sum1=0;sum2=0;
+        }
+        System.out.println("The count of the Carry Operations required to"
+                + " add two numbers is "+count);
+    }
+}
+
+OUTPUT:
+The count of the Carry Operations required to add two numbers is 4
