@@ -1,0 +1,23 @@
+// Java program to find all the Hyphens in the String to first and if there is no Hyphens return "NO Hyphens".
+
+package movehyphenstofront;
+public class MoveHyphensToFront {
+    public static void main(String[] args) {
+        String str="Move-Hyphens-to-Front";
+        String res="-";int count=0;
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)!='-')
+                res+=str.charAt(i);
+            else
+                count++;
+        }
+        if(count!=0)
+        System.out.println(res);
+        else
+            System.out.println("No Hyphens in the String");
+    }
+}
+
+OUTPUT:
+
+-MoveHyphenstoFront
