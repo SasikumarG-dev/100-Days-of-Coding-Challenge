@@ -1,0 +1,30 @@
+// Java program to check whether the given number is an Autobiographical number or not.
+
+package autobiographicalnumbers;
+public class AutobiographicalNumbers {
+    static boolean auto(String str){
+        int n;boolean bool=true;
+        int count=0;
+        for(int i=0;i<str.length();i++){
+            n=str.charAt(i)-48;
+            for(int j=0;j<str.length();j++){
+                if(str.charAt(j)-48==i)
+                    count++;
+            }
+            if(count!=n)
+                bool=false;
+            count=0;
+        }
+        return bool;
+    }
+    public static void main(String[] args) {
+        String str="42101000";
+        if(auto(str)==true)
+        System.out.println("The given number is an Autobiographical Number");
+        else
+            System.out.println("The given number is NOT an Autobiographical Number");
+    }
+}
+
+OUTPUT:
+The given number is an Autobiographical Number
