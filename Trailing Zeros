@@ -1,0 +1,21 @@
+// Java program to find 'Trailing Zeros' for the given number
+
+package trailingzeros;
+import java.util.*;
+public class TrailingZeros {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number to find Trailing Zeros ");
+        int n=sc.nextInt();
+        int count=0;
+        for(int i=5;i<=n;i*=5){
+            count+=n /i;
+        }
+        System.out.println("The number of Trailing Zeros is "+count);
+    }
+}
+
+OUTPUT:
+Enter the number to find Trailing Zeros 
+20
+The number of Trailing Zeros is 4
