@@ -1,5 +1,8 @@
 // Java program to find 'Trailing Zeros' for the given number
 
+//Given an integer n, write a function that returns count of trailing zeroes in n!.
+
+
 package trailingzeros;
 import java.util.*;
 public class TrailingZeros {
