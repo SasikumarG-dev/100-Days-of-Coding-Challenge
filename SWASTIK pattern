@@ -1,5 +1,18 @@
 // Java program to print 'Swastik Pattern'
 
+/* Take as input N, an odd number (>=5) . Print the following pattern as given below for N = 7.
+
+*  ****
+*  *
+*  *
+*******
+   *  *
+   *  *
+****  *
+
+*/
+
+
 package swastikpattern;
 import java.util.*;
 public class SwastikPattern {
