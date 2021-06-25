@@ -1,0 +1,29 @@
+// Java program to find the maximum of the Exponents between two numbers.
+
+package maximumoftheexponents;
+public class MaximumOfTheExponents {
+    public static void main(String[] args) {
+        int a=16,b=18;
+        int count;int next=0;int res=0;
+        for(int i=a;i<=b;i++){
+            count=0;
+            int j=i;
+        while(j!=0){
+            if(j%2==0){
+                count++;
+                j=j/2;
+            }
+            else 
+                break;
+        }
+        if(count>next){
+            res=i;
+            next=count;
+        }
+        }
+        System.out.println("Maximum of the Exponents is "+res);
+    }
+}
+
+OUTPUT:
+Maximum of the Exponents is 16
