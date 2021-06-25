@@ -1,0 +1,18 @@
+// Java program to find the sum of the numbers that is divisible by 3 and 5 is
+
+package divisibleby3and5b3tweennandm;
+public class DivisibleBy3And5B3tweenNandM {
+    public static void main(String[] args) {
+        int m=100,n=160;int sum=0;
+        for(int i=m;i<n;i++){
+            if(i%15==0)
+                sum+=i;
+        }
+        System.out.println("Sum of the numbers divisible by 3 and 5 is "+sum);
+    }
+    
+}
+
+OUTPUT:
+
+Sum of the numbers divisible by 3 and 5 is 510
