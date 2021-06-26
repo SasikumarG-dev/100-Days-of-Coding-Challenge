@@ -1,0 +1,57 @@
+// Java program to rotate the 2D Array in Clockwise and Anti-clockwise direction.
+
+package rotatetwodimensionalarray;
+import java.util.*;
+public class RotateTwoDimensionalArray {
+    static void clockwise(int arr[][],int n){
+        for(int i=0;i<n;i++){
+            for(int j=n-1;j>=0;j--){
+                System.out.print(arr[j][i]+" ");
+            }
+            System.out.println("");
+        }
+    }
+    static void anticlockwise(int arr[][],int n){
+        for(int i=n-1;i>=0;i--){
+            for(int j=0;j<n;j++){
+                System.out.print(arr[j][i]+" ");
+            }
+            System.out.println("");
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of the Matrix...");
+        int n=sc.nextInt();
+        int arr[][]=new int[n][n];
+        System.out.println("Enter the elements....");
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("After Clockwise shifting the matrix ");
+        clockwise(arr,n);
+        System.out.println("After Anti-clockwise shifting the matrix ");
+        anticlockwise(arr,n);
+    }
+}
+
+OUTPUT:
+Enter the size of the Matrix...
+4
+Enter the elements....
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+After Clockwise shifting the matrix 
+13 9 5 1 
+14 10 6 2 
+15 11 7 3 
+16 12 8 4 
+After Anti-clockwise shifting the matrix 
+4 8 12 16 
+3 7 11 15 
+2 6 10 14 
+1 5 9 13 
