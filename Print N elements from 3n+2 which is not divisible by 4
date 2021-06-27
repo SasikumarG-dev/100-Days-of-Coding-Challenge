@@ -1,0 +1,37 @@
+//Ekta is stuck with a numeric series of the type 3n + 2 (n = 1, 2, 3, 4…).
+//Help Ekta to print first N terms of the series starting from (n = 1), where N will be given by the user as the input.
+//But only those terms should be printed which are not a multiple of 4.
+//And in the last, the sum of all the printed terms.
+
+
+package pkg3nplus2series;
+public class Main {
+    public static void main(String[] args) {
+        int n=4;
+        int ans=0;int count=0;int sum=0;
+        int N=Integer.MAX_VALUE;int i=1;
+        System.out.println("Numbers which are not multiple of 4");
+        while(i>0){
+                ans=3*i+2;
+                if(ans%4!=0){
+                count++;
+                sum+=ans;
+                System.out.println(ans);
+            }
+            if(count==n)
+                break;
+            i++;
+        }
+        System.out.println("The sum of N numbers "+sum);
+    }
+}
+
+
+
+OUTPUT:
+Numbers which are not multiple of 4
+5
+11
+14
+17
+The sum of N numbers 47
