@@ -1,0 +1,37 @@
+package diamondnumericpattern;
+public class DiamondNumericPattern {
+    public static void main(String[] args) {
+        int n=5;
+        for(int i=1;i<=n;i++){
+            for(int j=i;j<=n;j++)
+                System.out.print(j+" ");
+            if(i<n)
+            System.out.println("");
+            for(int j=0;j<i;j++){
+                if(j<n)
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+        for(int i=2;i<=n;i++){
+            int j=0;
+            for(j=i;j<n;j++)
+                System.out.print(" ");
+            for(int k=i;k>=1;k--)
+                System.out.print(n-k+1+" ");
+            System.out.println("");
+        }
+        System.out.println();
+    }
+}
+
+OUTPUT:
+1 2 3 4 5 
+ 2 3 4 5 
+  3 4 5 
+   4 5 
+    5      
+   4 5 
+  3 4 5 
+ 2 3 4 5 
+1 2 3 4 5
