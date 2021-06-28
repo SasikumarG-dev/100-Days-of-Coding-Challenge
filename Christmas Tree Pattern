@@ -1,0 +1,67 @@
+// Java program to display Christmas Tree Pattern.
+
+package christmastreepattern;
+import java.util.*;
+public class ChristmasTreePattern {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the height of the tree ");
+        int height =sc.nextInt();
+        System.out.println("Enter the PINE height of the tree ");
+        int pine=sc.nextInt();
+        int spaces=height*4;
+        int x=1;
+        for(int i=1;i<=height;i++){
+            for(int j=x;j<=pine;j++){
+                for(int k=spaces;k>=j;k--)
+                    System.out.print(" ");
+                for(int k=1;k<=j;k++)
+                    System.out.print("* ");
+                System.out.println("");
+            }
+            x=x+2;pine=pine+2;
+        }
+        for(int i=1;i<=4;i++){
+            for(int j=spaces-3;j>=1;j--)
+                System.out.print(" ");
+            for(int j=1;j<=4;j++)
+                System.out.print("* ");
+            System.out.println("");
+        }
+    }
+}
+
+OUTPUT:
+Enter the height of the tree 
+5
+Enter the PINE height of the tree 
+5
+                    * 
+                   * * 
+                  * * * 
+                 * * * * 
+                * * * * * 
+                  * * * 
+                 * * * * 
+                * * * * * 
+               * * * * * * 
+              * * * * * * * 
+                * * * * * 
+               * * * * * * 
+              * * * * * * * 
+             * * * * * * * * 
+            * * * * * * * * * 
+              * * * * * * * 
+             * * * * * * * * 
+            * * * * * * * * * 
+           * * * * * * * * * * 
+          * * * * * * * * * * * 
+            * * * * * * * * * 
+           * * * * * * * * * * 
+          * * * * * * * * * * * 
+         * * * * * * * * * * * * 
+        * * * * * * * * * * * * * 
+                 * * * * 
+                 * * * * 
+                 * * * * 
+                 * * * * 
