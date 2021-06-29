@@ -1,0 +1,54 @@
+// Java program to print Armstrong Numbers till N.
+
+package armstrongnumbertilln;
+import java.util.*;
+public class ArmstrongNumberTillN {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number to print Armstrong number till that number");
+        int n=sc.nextInt();
+        System.out.println("Armstrong Numbers are..>>");
+        for(int i=1;i<=n;i++){
+            String s=Integer.toString(i);
+            double len=s.length();
+            int temp=i;
+            int res=0;int sum=0;
+            //System.out.println(temp);
+            while(temp>0){
+                //int res=0;
+                res=temp%10;
+                sum+=Math.pow(res, len);
+                temp=temp/10;
+            }
+            if(sum==i)
+            System.out.println(sum);
+        }
+    }
+}
+
+
+OUTPUT:
+
+Enter a number to print Armstrong number till that number
+1000000
+Armstrong Numbers are..>>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+153
+370
+371
+407
+1634
+8208
+9474
+54748
+92727
+93084
+548834
