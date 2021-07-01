@@ -1,0 +1,74 @@
+// Java program to insert elements at front, middle and end.
+
+package linkedlistinsertion;
+public class LinkedListInsertion {
+    Node head;
+    static class Node{
+    Node next;
+    int data;
+    Node(int d){
+        data=d;
+        next=null;
+    }
+}
+    void front(){
+        Node front=new Node(0);
+        front.next=head;
+        head=front;
+    }
+    void middle(Node C,Node B){
+        Node middle=new Node(3);
+        middle.next=C;
+        B.next=middle;
+    }
+    void end(){
+        Node end=new Node(5);
+        end.next=null;
+        Node n=head;
+        while(n.next!=null)
+            n=n.next;
+        n.next=end;
+    }
+    void printlist(){
+    Node n=head;
+    while(n!=null){
+        System.out.print(n.data+" ");
+        n=n.next;
+    }
+        System.out.println("");
+}
+    public static void main(String[] args) {
+        LinkedListInsertion list=new LinkedListInsertion();
+        
+        Node A = new Node(1);
+        Node B=new Node(2);
+        Node C=new Node(4);
+        
+        list.head=A;
+        A.next=B;
+        B.next=C;
+        System.out.println("List before Insertion: ");
+        list.printlist();
+        list.front();
+        System.out.println("After inserting element at front: ");
+        list.printlist();
+        list.middle(C,B);
+        System.out.println("After inserting element at middle: ");
+        list.printlist();
+        list.end();
+        System.out.println("After inserting element at end: ");
+        list.printlist();
+    }
+    
+}
+
+
+OUTPUT:
+List before Insertion: 
+1 2 4 
+After inserting element at front: 
+0 1 2 4 
+After inserting element at middle: 
+0 1 2 3 4 
+After inserting element at end: 
+0 1 2 3 4 5 
