@@ -1,0 +1,40 @@
+// Java program to print elements using LinkedList.
+
+package linkedlistexample;
+import java.util.*;
+public class LinkedListExample {
+        Node head;
+        static class Node{
+            int data;
+            Node next;
+            public Node(int d){
+                data=d;
+                next=null;
+            }
+        }
+    void printlist(){
+        Node n=head;
+        while(n!=null){
+            System.out.println(n.data);
+            n=n.next;
+        }
+    }
+    public static void main(String[] args) {
+        LinkedListExample list =new LinkedListExample();
+        Node A= new Node(1);
+        Node B= new Node(2);
+        Node C =new Node(3);
+        Node D=new Node(4);
+        list.head=A;
+        A.next=B;
+        B.next=C;
+        C.next=D;
+        list.printlist();
+    }
+}
+
+OUTPUT:
+1
+2
+3
+4
