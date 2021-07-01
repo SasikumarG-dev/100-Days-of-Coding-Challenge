@@ -1,4 +1,4 @@
-// Java program to insert elements at front, middle and end.
+// Java program to insert elements at front, middle and end using LinkedList.
 
 package linkedlistinsertion;
 public class LinkedListInsertion {
