@@ -1,0 +1,67 @@
+// Java program to delete linked list node with their position.
+
+package deleteatparticularposition;
+public class DeleteAtParticularPosition {
+    Node head;
+    static class Node{
+        int data;
+        Node next;
+         Node(int d){
+            data=d;
+            next=null;
+        }
+    }
+    public void push(DeleteAtParticularPosition list, int n){
+        Node node=new Node(n);
+        node.next=null;
+        if(list.head==null)
+            list.head=node;
+        else{
+            Node last=head;
+            while(last.next!=null)
+                last=last.next;
+            last.next=node;
+        }
+    }
+    public void delete(int pos){
+        Node temp=head;
+        if(pos==0){
+            head=head.next;
+            return;
+        }
+        for(int i=0;temp!=null && i<pos-1;i++)
+            temp=temp.next;
+        temp.next=temp.next.next;
+    }
+    public void printlist(){
+        Node n=head;
+        while(n!=null){
+            System.out.println(n.data);
+            n=n.next;
+        }
+    }
+    public static void main(String[] args) {
+        DeleteAtParticularPosition list =new DeleteAtParticularPosition();
+        list.push(list,1);
+        list.push(list,2);
+        list.push(list,3);
+        list.push(list,4);
+        System.out.println("Elements in the List ");
+        list.printlist();
+        list.delete(3);
+        System.out.println("Elements after deletion");
+        list.printlist();
+    }
+}
+
+
+OUTPUT:
+Elements in the List 
+1
+2
+3
+4
+Elements after deletion
+1
+2
+3
