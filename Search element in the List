@@ -1,0 +1,69 @@
+// Java program to search the Element in the list and return true if the element is prsnt in the List.
+
+package searchelementinthelist;
+public class SearchElementInTheList {
+    static Node head;
+    static class Node{
+        int data;
+        Node next;
+        Node(int d){
+            data=d;
+            next=null;
+        }
+    }
+    public void push(SearchElementInTheList list, int n){
+        Node node=new Node(n);
+        node.next=null;
+        if(list.head==null)
+            list.head=node;
+        else{
+            Node last=head;
+            while(last.next!=null)
+                last=last.next;
+            last.next=node;
+        }
+    }
+    boolean search(int n){
+        Node temp=head;
+        boolean bool=false;
+        while(temp!=null){
+            if(temp.data==n){
+                bool=true;
+                break;
+            }
+            temp=temp.next;
+        }
+        System.out.println(bool);
+        return bool;
+        
+    }
+    void printlist(){
+        Node n=head;
+        while(n!=null){
+            System.out.println(n.data);
+            n=n.next;
+        }
+    }
+    public static void main(String[] args) {
+        SearchElementInTheList list = new SearchElementInTheList();
+        list.push(list,0);
+        list.push(list,1);
+        list.push(list,2);
+        list.push(list,3);
+        list.push(list,4);
+        System.out.println("Elements in the List ");
+        list.printlist();
+        list.search(4);
+        
+    }
+}
+
+
+OUTPUT:
+Elements in the List 
+0
+1
+2
+3
+4
+true
