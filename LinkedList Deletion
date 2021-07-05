@@ -1,0 +1,73 @@
+// Java program to delete a node from linkedlist.
+
+package linkedlistdeletion;
+public class LinkedListDeletion {
+    Node head;
+    static class Node{
+        int data;
+        Node next;
+        Node(int d){
+            data=d;
+            next=null;
+        }
+    }
+    void push(LinkedListDeletion list,int n){
+        Node node=new Node(n);
+        
+        node.next=null;
+        if (list.head == null)
+            list.head = node;
+        else{
+            Node last=head;
+            while(last.next!=null){
+                last=last.next;
+            }
+            last.next=node;
+        }
+    }
+    public void delete(int d){
+        Node temp=head,prev=null;
+        
+        while(temp !=null && temp.data!=d){
+            prev=temp;
+            temp=temp.next;
+        }
+        if(temp==null){
+            return;
+        }
+        prev.next=temp.next;
+    }
+    void printlist(){
+        Node n=head;
+        while(n!=null){
+            System.out.println(n.data+" ");
+            n=n.next;
+        }
+    }
+    public static void main(String[] args) {
+        LinkedListDeletion list = new LinkedListDeletion();
+        list.push(list,1);
+        list.push(list,2);
+        list.push(list,3);
+        list.push(list,4);
+        System.out.println("Elements in List: ");
+        list.printlist();
+        list.delete(3);
+        System.out.println("Elements after deletion ");
+        list.printlist();
+    }
+    
+}
+
+
+OUTPUT:
+
+Elements in List: 
+1 
+2 
+3 
+4 
+Elements after deletion 
+1 
+2 
+4 
