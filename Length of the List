@@ -1,0 +1,64 @@
+// Java program to count the length of the List.
+
+package lengthofthelist;
+public class LengthOfTheList {
+    Node head;
+    static class Node{
+        int data;
+        Node next;
+        Node(int d){
+            data=d;
+            next=null;
+        }
+    }
+    void push(LengthOfTheList list,int n){
+        Node node=new Node(n);
+        node.next=null;
+        if(list.head==null)
+            list.head=node;
+        else{
+            Node last=head;
+            while(last.next!=null)
+                last=last.next;
+            last.next=node;
+        }
+    }
+    int count(){
+        Node n=head;
+        int count=0;
+        while(n!=null){
+            count++;
+            n=n.next;
+        }
+        return count;
+    }
+    void printlist(){
+        Node n=head;
+        while(n!=null){
+            System.out.println(n.data);
+            n=n.next;
+        }
+    }
+    public static void main(String[] args) {
+        LengthOfTheList list =new LengthOfTheList();
+        list.push(list,0);
+        list.push(list,1);
+        list.push(list,2);
+        list.push(list,3);
+        list.push(list,4);
+        System.out.println("Elements in the List ");
+        list.printlist();
+        System.out.println("Length of the List is "+list.count());
+    }
+    
+}
+
+
+OUTPUT:
+Elements in the List 
+0
+1
+2
+3
+4
+Length of the List is 5
