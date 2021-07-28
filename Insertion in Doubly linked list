@@ -1,0 +1,69 @@
+// Java program to insert elements in doubly linked list and print them.
+
+package doublylinkedlist;
+public class DoublyLinkedList {
+    Node head=null;
+    Node tail=null;
+    static class Node{
+        Node next;
+        Node pre;
+        int data;
+        Node(int d){
+            data=d;
+        }
+    }
+    void add(int val){
+        Node node = new Node(val);
+        if(head==null){
+            head=tail=node;
+            head.pre=null;
+            tail.next=null;
+        }
+        else{
+            tail.next=node;
+            node.pre=tail;
+            tail=node;
+            tail.next=null;
+        }
+    }
+    void displayfromfront(){
+        Node n=head;
+        while(n!=null){
+            System.out.println(n.data+" ");
+            n=n.next;
+        }
+    }
+    void displayfromlast(){
+        Node n=tail;
+        while(n!=null){
+            System.out.println(n.data+" ");
+            n=n.pre;
+        }
+    }
+    public static void main(String[] args) {
+        DoublyLinkedList list = new DoublyLinkedList();
+        list.add(0);
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        System.out.println("Print elemetns forward ");
+        list.displayfromfront();
+        System.out.println("Print elements backward");
+        list.displayfromlast();
+    }
+}
+
+OUTPUT:
+Print elemetns forward 
+0 
+1 
+2 
+3 
+4 
+Print elements backward
+4 
+3 
+2 
+1 
+0 
