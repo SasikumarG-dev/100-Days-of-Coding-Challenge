@@ -1,0 +1,89 @@
+// Java program to swap two nodes in the singly linked list without swapping the data in it.
+
+package swaptwonodeswithoutchangingdata;
+public class SwapTwoNodesWithoutChangingData {
+Node head;
+    static class Node{
+        Node next;
+        int data;
+        Node(int d){
+            data=d;
+            next=null;
+        }
+    }
+     void push(int val){
+        Node node=new Node(val);
+        if(head==null)
+            head=node;
+        else{
+            Node n=head;
+            while(n.next!=null)
+                n=n.next;
+            n.next=node;
+        }
+    }
+     void swap(int x,int y){
+         if(x==y)
+             return;
+         Node previousX=null;Node currentX=head;
+         while(currentX!=null && currentX.data!=x){
+             previousX=currentX;
+             currentX=currentX.next;
+         }
+         Node previousY=null;Node currentY=head;
+         while(currentY!=null && currentY.data!=y){
+             previousY=currentY;
+             currentY=currentY.next;
+         }
+         if(currentX==null&&currentY==null)
+             return;
+         if(previousX!=null)
+             previousX.next=currentY;
+         else
+             head=currentY;
+         if(previousY!=null)
+             previousY.next=currentX;
+         else
+             head=currentX;
+         
+         Node temp=currentX.next;
+         currentX.next=currentY.next;
+         currentY.next=temp;
+     }
+     void print(){
+         Node n=head;
+         while(n!=null){
+             System.out.println(n.data+" ");
+             n=n.next;
+         }
+     }
+    public static void main(String[] args) {
+        SwapTwoNodesWithoutChangingData list =new SwapTwoNodesWithoutChangingData();
+        
+        list.push(1);
+        list.push(2);
+        list.push(3);
+        list.push(4);
+        list.push(5);
+        System.out.println("List before Swapping>>>");
+        list.print();
+        list.swap(2,4);
+        System.out.println("List after swapping>>>");
+        list.print();;
+    }
+    
+}
+
+OUTPUT:
+List before Swapping>>>
+1 
+2 
+3 
+4 
+5 
+List after swapping>>>
+1 
+4 
+3 
+2 
+5
