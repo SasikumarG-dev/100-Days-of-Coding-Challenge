@@ -1,0 +1,70 @@
+// Java program to implement Stack using Linked List..
+
+package stackexample;
+public class StackExample {
+    Node top;
+    int length=0;
+    class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+        }
+    }
+    boolean isempty(){
+        return length==0;
+    }
+    void push(int data){
+        Node node=new Node(data);
+        node.next=top;
+        top=node;
+        System.out.println(data+" pushed to stack");
+        length++;
+    }
+    void pop(){
+        if(isempty()){
+            System.out.println("Stack is empty");
+        }
+        int result= top.data;
+        top=top.next;
+        System.out.println(result+" is popped from the stack");
+        length--;
+    }
+    void peek(){
+        if(isempty()){
+            System.out.println("Stack is empty");
+        }
+        System.out.println(top.data+" is the top element in the stack");
+    }
+    public static void main(String[] args) {
+        StackExample stack = new StackExample();
+        System.out.println("----Pushing elements in the Stack----\n");
+        stack.push(10);
+        stack.push(15);
+        stack.push(20);
+        stack.push(25);
+        System.out.println("\n-----Popping out elements in the stack----\n");
+        stack.pop();
+        stack.pop();
+        System.out.println("\n----Finding the top element in the stack----\n");
+        stack.peek();
+    }
+}
+
+
+OUTPUT:
+----Pushing elements in the Stack----
+
+10 pushed to stack
+15 pushed to stack
+20 pushed to stack
+25 pushed to stack
+
+-----Popping out elements in the stack----
+
+25 is popped from the stack
+20 is popped from the stack
+
+----Finding the top element in the stack----
+
+15 is the top element in the stack
