@@ -1,0 +1,43 @@
+// Java program to call the parameters in the method by value and reference.
+
+package callbyreference;
+class callbyvalue{
+    int data=10;
+    void operation(int data){
+        data=data+111;
+    }
+}
+class callbyreference{
+    int data=10;
+    void operation(callbyreference obj1){
+        obj1.data=obj1.data+111;
+    }
+}
+public class CallByValueandReference {
+    public static void main(String[] args) {
+        callbyvalue obj=new callbyvalue();
+        System.out.println("Calling method with value");
+        System.out.println("Before calling:\n"+obj.data);
+        obj.operation(100);
+        System.out.println("After calling:\n"+obj.data);
+        callbyreference obj1=new callbyreference();
+        System.out.println("\nCalling method with reference");
+        System.out.println("Before calling:\n"+obj1.data);
+        obj1.operation(obj1);
+        System.out.println("After calling:\n"+obj1.data);
+    }
+}
+
+
+OUTPUT:
+Calling method with value
+Before calling:
+10
+After calling:
+10
+
+Calling method with reference
+Before calling:
+10
+After calling:
+121
