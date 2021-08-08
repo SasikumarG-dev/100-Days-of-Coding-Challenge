@@ -1,0 +1,81 @@
+// Java program to find the postfix expression for a given infix expression using Stack.
+
+package infixtopostfixusingstack;
+import java.util.*;
+public class InfixToPostfixUsingStack {
+    static public String infixtopostfix(String str){
+        Stack<Character> stack= new Stack<Character>();
+        String postfix="";
+        char ch[]=str.toCharArray();
+        for(char c:ch){
+            if(c!='+'&&c!='-'&&c!='*'&&c!='/'&&c!='('&&c!=')'&&c!='^'){
+                postfix=postfix+c;
+            }
+            else if(c=='('){
+                stack.push(c);
+            }
+            else if(c==')'){
+                while(!stack.isEmpty()){
+                    char pop=stack.pop();
+                    if(pop!='(')
+                        postfix=postfix+pop;
+                    else
+                        break;
+                }
+            }
+            else if(c=='+'||c=='-'||c=='*'||c=='/'||c=='^'){
+                if(stack.isEmpty())
+                    stack.push(c);
+                else {
+                    while(!stack.isEmpty()){
+                        char pop=stack.pop();
+                        if(pop=='('){
+                            stack.push(pop);
+                            break;
+                        }
+                        else if(pop=='+'||pop=='-'||pop=='*'||pop=='/'||pop=='^'){
+                            if(preecedence(pop)<preecedence(c)){
+                                stack.push(pop);
+                                break;
+                            }
+                            else
+                                postfix=postfix+pop;
+                        }
+                    }
+                    stack.push(c);
+                }
+            }
+        }
+        while(!stack.isEmpty())
+            postfix=postfix+stack.pop();
+        return postfix;
+    }
+    static public int preecedence(char ch){
+        if(ch=='+'||ch=='-')
+            return 1;
+        else if(ch=='*'||ch=='/')
+            return 2;
+        else if(ch=='^')
+            return 3;
+        else
+            return -1;
+    }
+    public static void main(String[] args) {
+        String str="3*(4+5)-6/(1+2)";
+        String str1="A+B*(C^D-E)";
+        String str3="(a+b*(c^d-e)^(f+g*h)-i)";
+        System.out.println("Postfix Expression: "+InfixToPostfixUsingStack.infixtopostfix(str));;
+        System.out.println("\nPostfix Expression: "+InfixToPostfixUsingStack.infixtopostfix(str1));;
+        System.out.println("\nPostfix Expression: "+InfixToPostfixUsingStack.infixtopostfix(str3));;
+
+    }
+    
+}
+
+
+OUTPUT:
+Postfix Expression: 345+*612+/-
+
+Postfix Expression: ABCD^E-*+
+
+Postfix Expression: abcd^e-fgh*+^*+i-
