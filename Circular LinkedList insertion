@@ -1,0 +1,47 @@
+// Java program to insert elements in the linked list and print them.
+
+package circularlinkedlist;
+public class CircularLinkedList {
+    Node head;
+    Node tail;
+    class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+        }
+    }
+    void push(int data){
+        Node node= new Node(data);
+        if(head==null){
+            head=node;
+            tail=node;
+            tail.next=head;
+        }
+        else{
+            tail.next=node;
+            tail=node;
+            tail.next=head;
+        }
+    }
+    void display(){
+        Node n=head;
+        do{
+            System.out.println(n.data);
+            n=n.next;
+        }while(n!=head);
+    }
+    public static void main(String[] args) {
+        CircularLinkedList list = new CircularLinkedList();
+        list.push(0); list.push(1); list.push(2); list.push(3);
+        System.out.println("Elements in the List....");
+        list.display();
+    } 
+}
+
+OUTPUT:
+Elements in the List....
+0
+1
+2
+3
