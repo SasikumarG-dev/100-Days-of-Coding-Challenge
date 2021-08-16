@@ -1,0 +1,21 @@
+// Java program to reverse the words that are given in the String.
+
+package reversewordsinString;
+public class ReverseWordsInString {
+    public static void main(String[] args) {
+        String str="Hi how are you";
+        String res[]=str.split(" ");
+        for(int i=0;i<res.length;i++){
+            for(int j=res[i].length()-1;j>=0;j--)
+                System.out.print(res[i].charAt(j));
+            System.out.println("");
+        }
+    }
+}
+
+
+OUTPUT:
+iH
+woh
+era
+uoy
