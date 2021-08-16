@@ -1,0 +1,43 @@
+// Java program to reverse the elements in the Stack using Recursion.
+
+package reversestack;
+import java.util.*;
+public class ReverseStack {
+    static Stack<Integer> stack=new Stack<Integer>();
+    static void reverse(){
+        if(!stack.isEmpty()){
+            int temp=stack.pop();
+            reverse();
+            insertAtBottom(temp);
+        }
+    }
+    static void insertAtBottom(int temp){
+        if(stack.isEmpty()){
+            stack.push(temp);
+            return;
+        }
+            int top=stack.pop();
+            insertAtBottom(temp);
+            stack.push(top);
+    }
+    public static void main(String[] args) {
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        System.out.println("Original stack " );
+        System.out.println(stack);
+        reverse();
+        System.out.println("\nReversed Stack");
+        System.out.println(stack);
+    }
+    
+}
+
+
+OUTPUT:
+Original stack 
+[1, 2, 3, 4]
+
+Reversed Stack
+[4, 3, 2, 1]
