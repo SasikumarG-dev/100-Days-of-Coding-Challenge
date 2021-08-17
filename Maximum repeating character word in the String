@@ -1,0 +1,29 @@
+ // Java program to print the word in the String that has the maximum repeating character in it.
+ 
+ package maximumcharacterinthestring;
+public class MaximumCharacterInTheString {
+    public static void main(String[] args) {
+        int index=0;
+        String str="teeeeeeam assesssment";int ans=0;
+        //Separating the words in the String
+        String res[]=str.split(" ");
+        for(int i=0;i<res.length;i++){
+            int count=0;
+            for(int j=0;j<res[i].length();j++){
+                for(int k=j+1;k<res[i].length();k++)
+                    if(res[i].charAt(j)==res[i].charAt(k))
+                        count++;
+                
+                if(count>ans){
+                    ans=count;
+                    index=i;
+                }
+                count=0;
+            }
+        }
+        System.out.println(res[index]);
+    }
+}
+
+OUTPUT:
+teeeeeeam
