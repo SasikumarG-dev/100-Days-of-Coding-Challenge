@@ -1,0 +1,38 @@
+// Java program to print the given numbers in the Two-Dimensional Array in Spiral pattern.
+
+package spiralpattern;
+public class SpiralPattern {
+    public static void main(String[] args) {
+        int n=5;
+        int arr[][]=new int[n][n];
+        int top=0,left=0,right=n-1,bottom=n-1;int val=1;
+        while(val<=n*n){
+            for(int i=left;i<=right;i++)
+                arr[top][i]=val++;
+            top++;
+            for(int i=top;i<=bottom;i++)
+                arr[i][right]=val++;
+            right--;
+            for(int i=right;i>=left;i--)
+                arr[bottom][i]=val++;
+            bottom--;
+            for(int i=bottom;i>=top;i--)
+                arr[i][left]=val++;
+            left++;
+        }
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println("");
+        }
+    }
+}
+
+
+OUTPUT:
+1 2 3 4 5 
+16 17 18 19 6 
+15 24 25 20 7 
+14 23 22 21 8 
+13 12 11 10 9 
