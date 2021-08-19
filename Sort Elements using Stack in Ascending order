@@ -1,0 +1,38 @@
+// Java progeam to sort the elements in the Staack in Ascending order.
+
+
+package sortstackusinganotherstack;
+import java.util.*;
+public class SortStackUsingAnotherStack {
+    static Stack<Integer> sort(Stack<Integer> stack){
+        Stack<Integer> tempStack = new Stack<Integer>();
+        while(!stack.isEmpty()){
+            int temp=stack.pop();
+            while(!tempStack.isEmpty() && tempStack.peek()>temp){
+                stack.push(tempStack.pop());
+            }
+            tempStack.push(temp);
+        }
+        return tempStack;
+    }
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push(34);
+        stack.push(3);
+        stack.push(31);
+        stack.push(98);
+        stack.push(23);
+        stack.push(39);
+        System.out.println("Before Sorting");
+        System.out.println(stack);
+        System.out.println("After Sorting");
+        System.out.println(sort(stack));
+    }
+}
+
+
+OUTPUT:
+Before Sorting
+[34, 3, 31, 98, 23, 39]
+After Sorting
+[3, 23, 31, 34, 39, 98]
