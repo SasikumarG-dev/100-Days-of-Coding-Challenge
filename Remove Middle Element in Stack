@@ -1,0 +1,43 @@
+// Java program to remove the middle element in the Stack.
+
+package deletemiddleelementinstack;
+import java.util.*;
+public class DeleteMiddleElementInStack {
+    static void deleteMiddleElement(Stack<Integer> stack){
+        int n=stack.size();
+        while(!stack.isEmpty()){
+            if(stack.size()==n/2)
+                stack.pop();
+            else
+                System.out.println(stack.pop());
+        }
+    }
+    public static void main(String[] args) {
+        Stack<Integer> stack =new Stack<Integer>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        stack.push(6);
+        stack.push(7);
+        System.out.println("Elements in the Stack");
+        System.out.println(stack);
+        System.out.println("After removing middle element");
+        deleteMiddleElement(stack);
+        
+    }
+    
+}
+
+
+OUTPUT:
+Elements in the Stack
+[1, 2, 3, 4, 5, 6, 7]
+After removing middle element
+7
+6
+5
+4
+2
+1
