@@ -1,0 +1,34 @@
+// Java program to reverse the given words in the string using Stack.
+
+package reversewordsinstack;
+import java.util.*;
+public class ReverseWordsInStack {
+    static void reverse(String str){
+        Stack<Character> stack = new Stack<Character>();
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)!=' ')
+                stack.push(str.charAt(i));
+            else{
+                while(stack.empty()==false){
+                    System.out.print(stack.pop());
+                }
+                System.out.print(" ");
+            }
+            
+            if(i==str.length()-1){
+                while(stack.empty()==false)
+                    System.out.print(stack.pop());
+            }
+        }
+        System.out.println("");
+    }
+    public static void main(String[] args) {
+        String str="Hello world";
+        reverse(str);
+    }
+    
+}
+
+
+OUTPUT:
+olleH dlrow
