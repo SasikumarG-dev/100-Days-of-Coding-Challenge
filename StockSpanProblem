@@ -1,0 +1,30 @@
+// Java program to find the Stock span values for the given values.
+
+package stockspan;
+public class StockSpan {
+    public static void main(String[] args) {
+        int arr[]={ 100, 80, 60, 70, 60, 75, 85 };
+        int n=arr.length;
+        int res[]=new int[n];
+        System.out.println("Stock Span Values...");
+        for(int i=0;i<n;i++){
+            int count=1;
+            int val=arr[i];
+            for(int j=i-1;j<i&&j>=0;j--){
+                if(val>arr[j]){
+                    count++;
+                }
+                else
+                    break;
+            }
+            System.out.print(count+" ");
+        }
+        System.out.println("");
+    }
+    
+}
+
+
+OUTPUT:
+Stock Span Values...
+1 1 1 2 1 4 6 
